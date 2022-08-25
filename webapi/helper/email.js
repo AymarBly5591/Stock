@@ -48,7 +48,7 @@ async function Login({user}){
 
 async function ForgetPassword(email , sujet , htl){
     const transporter = nodemailer.createTransport({
-        host: 'smtp.gmail.com',port: 465 ,service :"gmail",auth: {user:"aymarbly559@gmail.com",pass: "joresse1#"},
+        host: 'smtp.gmail.com',port: 465 ,service :"gmail",auth: {user:process.env.USER_MAIL,pass: process.env.PASS},
         tls: {rejectUnauthorized: false},
       });
     var mailOptions = {from: String("aymarbly559@gmail.com"),to: email,subject: sujet, 
